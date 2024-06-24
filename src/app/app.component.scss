@@ -1,0 +1,60 @@
+/** Text Styles */
+
+h1 {
+    margin-top: 8px;
+    margin-bottom: 0;
+    color: rgb(179, 26, 210);    
+}
+
+h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/** Page Elements */
+
+:host {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.journal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        width: fit-content;
+    }
+}
+
+.macro-entry {
+    margin-bottom: 8px;
+    padding: 8px;
+    width: 250px;
+
+    border: 2px solid lightgray;
+    border-radius: 16px;
+    box-shadow: 2px 2px 8px rgb(219, 219, 219);
+    transition: border-color 420ms;
+
+    &:hover {
+        border-color: rgb(179, 26, 210);
+    }
+
+    .macro {
+        font-weight: 500;
+    }
+
+    .date {
+        font-size: 12px;
+        font-weight: 500;
+        color: grey;
+    }
+}
