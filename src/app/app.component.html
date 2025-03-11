@@ -8,6 +8,8 @@
   
   <section class="journal">
     <h2>My Macro Journal</h2>
+
+    <app-macro-entry-form (submit)="loadDependencies()"></app-macro-entry-form>
   
     @for (entry of macroEntries; track entry.id) {
       <div class="macro-entry">

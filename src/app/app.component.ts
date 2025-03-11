@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { ApiService } from './common/services/api_service';
 import { MacroEntry } from './common/models/macro_entry';
+import { MacroEntryForm } from './macro_entry_form/macro_entry_form.component';
 
 interface MacroEntryView {
     id: number;
@@ -17,7 +18,7 @@ interface MacroEntryView {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MacroEntryForm],
   providers: [ApiService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
       this.loadDependencies();
   }
-  private async loadDependencies(): Promise<void> {
+  protected async loadDependencies(): Promise<void> {
     const data = await this.service.listMacroEntries(1);
     this.macroEntries = data.map((entry): MacroEntryView => ({
       ...entry,

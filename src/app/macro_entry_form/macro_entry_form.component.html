@@ -1,0 +1,21 @@
+<div class = "form-container">
+    <h4>Create a new Entry</h4>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <mat-label>Proteins</mat-label>
+            <input [formControl]="form.controls.proteins" matInput type="number">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Carbs</mat-label>
+            <input [formControl]="form.controls.carbs" matInput type="number">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Fats</mat-label>
+            <input [formControl]="form.controls.fats" matInput type="number">
+        </mat-form-field>
+
+        <button type="submit" [disabled]="form.invalid" mat-button>Submit</button>
+    </form>
+</div>
